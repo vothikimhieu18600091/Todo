@@ -1,0 +1,19 @@
+<h1>My To Do List <%- currentUser ? currentUser.username : 'Guest' %></h1>
+<div id="myDIV" class="header">
+  <form method="POST">
+    <input type="text" id="myInput" name="name" placeholder="Title...">
+    <button type="submit" formmethod="post">Add work</button>
+  </form>
+ 
+</div>
+<div style="margin-top: 50px;" class="alert alert-success" role="alert">
+    <ol>
+      <% todos.forEach(function(t){ %>
+        <li><%=t.name %>
+          <a class="btn btn-success" href="/todo/<%= t.id %>/done" role="button"> Đã xong</a>
+        </li>
+        <br>
+      <% }); %>
+   </ol>
+</div>
+        
